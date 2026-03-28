@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join Us</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+/* BODY */
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#ffffff;
+    overflow:hidden;
+}
+
+/* BACKGROUND */
+.shape{
+    position:absolute;
+    border-radius:50%;
+    background:#007bff;
+    opacity:0.07;
+    animation:float 8s infinite ease-in-out;
+}
+
+.shape1{
+    width:260px;
+    height:260px;
+    top:8%;
+    left:8%;
+}
+
+.shape2{
+    width:380px;
+    height:380px;
+    bottom:8%;
+    right:8%;
+    animation-duration:10s;
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-30px);}
+}
+
+/* CONTAINER */
+.container{
+    width:90%;
+    max-width:1430px;
+    display:flex;
+    justify-content:center;
+}
+
+/* CARD */
+.card{
+    width:450px;
+    padding:40px;
+    background:#fff;
+    border-radius:15px;
+    box-shadow:0 15px 40px rgba(0,123,255,0.15);
+    text-align:center;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+/* TITLE */
+.card h2{
+    color:#007bff;
+    margin-bottom:5px;
+}
+
+/* INPUT */
+.input-box{
+    position:relative;
+    margin:18px 0;
+}
+
+.input-box input{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-bottom:2px solid #007bff;
+    outline:none;
+    font-size:15px;
+}
+
+/* LABEL */
+.input-box label{
+    position:absolute;
+    top:50%;
+    left:0;
+    transform:translateY(-50%);
+    color:#007bff;
+    transition:0.3s;
+    pointer-events:none;
+}
+
+.input-box input:focus + label,
+.input-box input:valid + label{
+    top:-5px;
+    font-size:12px;
+}
+
+/* STATUS TEXT */
+.status{
+    font-size:12px;
+    margin-top:5px;
+    text-align:left;
+    display:none;
+}
+
+.status.error{
+    color:red;
+}
+
+.status.success{
+    color:green;
+}
+
+/* BUTTON */
+button{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:25px;
+    background:#007bff;
+    color:#fff;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+    margin-top:10px;
+}
+
+button:hover{
+    background:#0056b3;
+    transform:scale(1.05);
+}
+
+/* SUCCESS POPUP */
+.popup{
+    position:fixed;
+    top:20px;
+    left:50%;
+    transform:translateX(-50%) translateY(-50px);
+    background:#007bff;
+    color:#fff;
+    padding:12px 25px;
+    border-radius:25px;
+    opacity:0;
+    transition:0.5s;
+}
+
+.popup.show{
+    opacity:1;
+    transform:translateX(-50%) translateY(0);
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    .card{
+        width:100%;
+        padding:25px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="shape shape1"></div>
+<div class="shape shape2"></div>
+
+<div id="popup" class="popup">Account Successfully Created 🚀</div>
+
+<div class="container">
+    <div class="card">
+
+        <h2>Join Us</h2>
+
+        <form id="joinForm">
+
+            <!-- NAME -->
+            <div class="input-box">
+                <input type="text" id="name" required>
+                <label>Full Name</label>
+            </div>
+
+            <!-- USERNAME -->
+            <div class="input-box">
+                <input type="text" id="username" required>
+                <label>Username</label>
+                <div id="usernameStatus" class="status"></div>
+            </div>
+
+            <div class="input-box">
+                <input type="email" id="email" required>
+                <label>Email</label>
+            </div>
+
+            <div class="input-box">
+                <input type="password" id="password" required>
+                <label>Password</label>
+            </div>
+
+            <div class="input-box">
+                <input type="password" id="confirm" required>
+                <label>Confirm Password</label>
+            </div>
+
+            <button type="submit">Create Account</button>
+
+        </form>
+
+    </div>
+</div>
+
+<script>
+
+/* EXISTING USERS */
+let existingUsers = ["admin", "mithun", "user123"];
+
+/* USERNAME CHECK */
+document.getElementById("username").addEventListener("input", function(){
+
+    let value = this.value.toLowerCase();
+    let status = document.getElementById("usernameStatus");
+
+    if(existingUsers.includes(value)){
+        status.style.display = "block";
+        status.textContent = "Username is already taken!";
+        status.className = "status error";
+    } else {
+        status.style.display = "block";
+        status.textContent = "Username available ✅";
+        status.className = "status success";
+    }
+
+});
+
+/* FORM SUBMIT */
+document.getElementById("joinForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let username = document.getElementById("username").value.toLowerCase();
+    let email = document.getElementById("email").value;
+    let pass = document.getElementById("password").value;
+    let confirm = document.getElementById("confirm").value;
+
+    if(existingUsers.includes(username)){
+        alert("Username already taken! Choose another.");
+        return;
+    }
+
+    if(pass !== confirm){
+        alert("Passwords do not match!");
+        return;
+    }
+
+    if(name && username && email && pass && confirm){
+
+        existingUsers.push(username);
+
+        let popup = document.getElementById("popup");
+        popup.classList.add("show");
+
+        setTimeout(() => {
+            window.location.href = "login.html";
+        }, 2500);
+
+    } else {
+        alert("Please fill all fields");
+    }
+
+});
+
+</script>
+
+</body>
+</html>

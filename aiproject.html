@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Project Learning</title>
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root {
+  --primary: #4f8cff;
+  --secondary: #6a5cff;
+  --bg: #f5f7fb;
+  --text: #1a1a1a;
+  --gradient: linear-gradient(135deg, #4f8cff, #6a5cff);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: var(--bg);
+}
+
+/* WRAPPER */
+.wrapper {
+  max-width: 1400px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* BACK */
+.back-link {
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: bold;
+  transition: 0.3s;
+}
+.back-link:hover {
+  color: var(--secondary);
+  transform: translateX(-5px);
+}
+
+/* HERO (🔥 SAME STYLE) */
+.hero {
+  text-align: center;
+  padding: 70px 20px;
+  background: var(--gradient);
+  color: white;
+  border-radius: 20px;
+  margin: 20px 0 40px;
+  box-shadow: 0 10px 30px rgba(79,140,255,0.3);
+  animation: fadeIn 1s ease;
+}
+
+.hero h1 {
+  font-size: 2.6rem;
+}
+
+.hero p {
+  margin-top: 10px;
+  opacity: 0.9;
+}
+
+.ai-text {
+  margin-top: 12px;
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+/* GRID */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+/* CARD (🔥 PRO STYLE) */
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* HOVER EFFECT */
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  background: var(--gradient);
+  color: white;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.card h3,
+.card p {
+  transition: 0.3s;
+}
+
+.card:hover h3,
+.card:hover p {
+  color: white;
+}
+
+/* ICON */
+.card i {
+  font-size: 32px;
+  color: var(--primary);
+  transition: 0.5s;
+  animation: float 3s infinite ease-in-out;
+}
+
+.card:hover i {
+  transform: scale(1.4) rotate(15deg);
+  color: white;
+}
+
+/* FLOAT ANIMATION */
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* BUTTON */
+.btn {
+  margin-top: auto;
+  padding: 10px 16px;
+  border-radius: 6px;
+  background: var(--primary);
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: var(--secondary);
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 25px;
+  opacity: 0.6;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .hero h1{
+    font-size:2rem;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+  <a href="index.html" class="back-link">← Back to Home</a>
+
+  <!-- HERO -->
+  <div class="hero">
+    <h1>AI Project Builder</h1>
+    <p>Learn Artificial Intelligence from Basics to Advanced Projects</p>
+    <div class="ai-text" id="aiText">AI Tip: Start with Machine Learning Basics</div>
+  </div>
+
+  <!-- CARDS -->
+  <div class="container">
+
+    <div class="card">
+      <i class="fa-solid fa-brain"></i>
+      <h3>Introduction to AI</h3>
+      <p>What is AI, History, Real-world Applications</p>
+      <a href="#" class="btn">Explore</a>
+    </div>
+
+    <div class="card">
+      <i class="fa-solid fa-robot"></i>
+      <h3>Machine Learning</h3>
+      <p>Supervised, Unsupervised Learning, Models</p>
+      <a href="#" class="btn">Explore</a>
+    </div>
+
+    <div class="card">
+      <i class="fa-solid fa-network-wired"></i>
+      <h3>Deep Learning</h3>
+      <p>Neural Networks, CNN, RNN</p>
+      <a href="#" class="btn">Explore</a>
+    </div>
+
+    <div class="card">
+      <i class="fa-solid fa-laptop-code"></i>
+      <h3>AI Projects</h3>
+      <p>Build Chatbots, Recommendation Systems</p>
+      <a href="#" class="btn">Start</a>
+    </div>
+
+    <div class="card">
+      <i class="fa-solid fa-eye"></i>
+      <h3>Computer Vision</h3>
+      <p>Image Recognition, Object Detection</p>
+      <a href="#" class="btn">Explore</a>
+    </div>
+
+    <div class="card">
+      <i class="fa-solid fa-comments"></i>
+      <h3>Natural Language Processing</h3>
+      <p>Text Analysis, Chatbots, AI Assistants</p>
+      <a href="#" class="btn">Explore</a>
+    </div>
+
+  </div>
+
+  <footer>
+    © 2026 AI Learning Platform
+  </footer>
+
+</div>
+
+<script>
+const tips = [
+  "AI Tip: Start with Machine Learning Basics",
+  "AI Tip: Practice with real datasets",
+  "AI Tip: Focus on Python for AI",
+  "AI Tip: Build projects to learn faster"
+];
+
+let index = 0;
+setInterval(() => {
+  index = (index + 1) % tips.length;
+  document.getElementById("aiText").textContent = tips[index];
+}, 3000);
+</script>
+
+</body>
+</html>

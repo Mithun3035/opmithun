@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CodeWithMithun</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root{
+    /* 🔥 CHANGE THIS COLOR */
+    --main-color:#2563eb;
+}
+
+body{
+    margin:0;
+    font-family:'Segoe UI', sans-serif;
+    background:#f3f4f6;
+}
+
+/* CARD */
+.card{
+    max-width:1430px;
+    height:250px; /* ✅ FIXED HEIGHT */
+    margin:40px auto;
+    padding:30px;
+    border-radius:22px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    /* INNER COLOR */
+    background:linear-gradient(135deg,var(--main-color),#38bdf8);
+    color:#fff;
+
+    box-shadow:0 15px 40px rgba(0,0,0,0.15);
+}
+
+/* OVERLAY */
+.card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(255,255,255,0.08);
+}
+
+/* CONTENT */
+.card-content{
+    position:relative;
+    z-index:2;
+    max-width:900px;
+}
+
+/* TITLE */
+.card h1{
+    font-size:28px;
+    margin-bottom:10px;
+}
+
+/* TEXT */
+.card p{
+    font-size:15px;
+    line-height:1.6;
+    margin:0 auto;
+}
+
+/* BUTTON */
+.btn{
+    display:inline-block;
+    margin-top:15px;
+    padding:10px 22px;
+    border-radius:25px;
+    background:#fff;
+    color:var(--main-color);
+    font-weight:600;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* FLOATING SHAPES */
+.shape1, .shape2{
+    position:absolute;
+    border-radius:50%;
+    background:rgba(255,255,255,0.15);
+    animation:float 6s infinite ease-in-out;
+}
+
+.shape1{
+    width:100px;
+    height:100px;
+    top:-30px;
+    left:-30px;
+}
+
+.shape2{
+    width:140px;
+    height:140px;
+    bottom:-50px;
+    right:-50px;
+    animation-delay:2s;
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-10px);}
+}
+
+/* 📱 RESPONSIVE */
+@media(max-width:768px){
+    .card{
+        height:auto; /* 🔥 AUTO HEIGHT ON MOBILE */
+        padding:20px;
+        margin:20px 15px;
+    }
+
+    .card h1{
+        font-size:20px;
+    }
+
+    .card p{
+        font-size:13px;
+    }
+
+    .btn{
+        font-size:13px;
+        padding:8px 18px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <div class="shape1"></div>
+    <div class="shape2"></div>
+
+    <div class="card-content">
+        <h1>CodeWithMithun - Your One Stop Coding Solution</h1>
+
+        <p>
+                Welcome to CodeWithMithun, a platform designed to make learning programming simple and effective. 
+        Whether you are a beginner starting your coding journey, a student building projects, 
+        or a developer improving your skills, our tutorials and resources are here to help. 
+        No need to install heavy software—learn directly in your browser and grow your skills step by step. 
+        Save time and effort with everything you need, all in one place.
+        </p>
+
+        <a href="#" class="btn">Start Learning 🚀</a>
+    </div>
+
+</div>
+
+</body>
+</html>

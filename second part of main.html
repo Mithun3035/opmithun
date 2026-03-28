@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Roadmap</title>
+
+    <!-- ICONS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        /* BODY */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(270deg, #eaf3ff, #ffffff, #e0ecff);
+            background-size: 600% 600%;
+            animation: bgMove 10s ease infinite;
+            padding: 20px;
+        }
+
+        /* BACKGROUND ANIMATION */
+        @keyframes bgMove {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* TITLE */
+        .roadmap-title {
+            text-align: center;
+            margin: 50px 0 25px;
+            font-size: 28px;
+            color: #007bff;
+        }
+
+        /* GRID */
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        /* STEP LINK (FULL CLICKABLE) */
+        .step-link {
+            text-decoration: none;
+        }
+
+        /* STEP CARD */
+        .step {
+            position: relative;
+            padding: 18px;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            font-weight: 600;
+            color: #111;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: 0.4s;
+            overflow: hidden;
+        }
+
+        /* ICON */
+        .step i {
+            font-size: 20px;
+            color: #007bff;
+        }
+
+        /* GLOW BORDER */
+        .step::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 14px;
+            padding: 2px;
+            background: linear-gradient(45deg, #007bff, #00c6ff, #007bff);
+            -webkit-mask:
+                linear-gradient(#fff 0 0) content-box,
+                linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: 0.4s;
+        }
+
+        /* SHINE */
+        .step::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+            transition: 0.6s;
+        }
+
+        /* HOVER */
+        .step:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 15px 30px rgba(0, 123, 255, 0.2);
+        }
+
+        .step:hover::after {
+            opacity: 1;
+        }
+
+        .step:hover::before {
+            left: 100%;
+        }
+
+        /* 📱 TABLET */
+        @media(max-width:900px) {
+            .steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* 📱 MOBILE */
+        @media(max-width:500px) {
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+            .step {
+                font-size: 14px;
+                padding: 15px;
+            }
+
+            .roadmap-title {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2 class="roadmap-title">Learning Roadmap</h2>
+
+    <div class="steps">
+
+        <a href="html.html" class="step-link">
+            <div class="step"><i class="fa-brands fa-html5"></i> HTML Basics</div>
+        </a>
+
+        <a href="css.html" class="step-link">
+            <div class="step"><i class="fa-brands fa-css3-alt"></i> CSS Styling</div>
+        </a>
+
+        <a href="responsive.html" class="step-link">
+            <div class="step"><i class="fa-solid fa-mobile-screen"></i> Responsive Design</div>
+        </a>
+
+        <a href="javascript.html" class="step-link">
+            <div class="step"><i class="fa-brands fa-js"></i> JavaScript</div>
+        </a>
+
+        <a href="dom.html" class="step-link">
+            <div class="step"><i class="fa-solid fa-code"></i> DOM Manipulation</div>
+        </a>
+
+        <a href="api.html" class="step-link">
+            <div class="step"><i class="fa-solid fa-plug"></i> API Handling</div>
+        </a>
+
+        <a href="git.html" class="step-link">
+            <div class="step"><i class="fa-brands fa-git-alt"></i> Git & GitHub</div>
+        </a>
+
+        <a href="projects.html" class="step-link">
+            <div class="step"><i class="fa-solid fa-laptop-code"></i> Mini Projects</div>
+        </a>
+
+        <a href="advanced-js.html" class="step-link">
+            <div class="step"><i class="fa-solid fa-brain"></i> Advanced JS</div>
+        </a>
+
+        <a href="react.html" class="step-link">
+            <div class="step"><i class="fa-brands fa-react"></i> React</div>
+        </a>
+
+        <a href="backend.html" class="step-link">
+            <div class="step"><i class="fa-solid fa-server"></i> Backend</div>
+        </a>
+
+        <a href="database.html" class="step-link">
+            <div class="step"><i class="fa-solid fa-database"></i> Database</div>
+        </a>
+
+        <a href="deployment.html" class="step-link">
+            <div class="step"><i class="fa-solid fa-cloud-arrow-up"></i> Deployment</div>
+        </a>
+
+        <a href="freelancing.html" class="step-link">
+            <div class="step"><i class="fa-solid fa-briefcase"></i> Freelancing</div>
+        </a>
+
+    </div>
+
+
+
+
+
+
+    
+</body>
+
+</html>

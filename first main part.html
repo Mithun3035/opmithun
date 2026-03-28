@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animated Course Dashboard</title>
+
+<!-- ICONS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* 🌊 ANIMATED BACKGROUND */
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:linear-gradient(270deg,#eaf3ff,#ffffff,#e0ecff);
+    background-size:600% 600%;
+    animation:bgMove 10s ease infinite;
+    padding:20px;
+}
+
+@keyframes bgMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* GRID */
+.course-box{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+/* CARD */
+.course{
+    position:relative;
+    text-decoration:none;
+    color:#111;
+    padding:25px;
+    border-radius:18px;
+    background:rgba(255,255,255,0.7);
+    backdrop-filter:blur(10px);
+    box-shadow:0 10px 30px rgba(0,0,0,0.1);
+    overflow:hidden;
+    transition:0.4s;
+}
+
+/* 🔥 GLOW BORDER */
+.course::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:18px;
+    padding:2px;
+    background:linear-gradient(45deg,#007bff,#00d4ff,#007bff);
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite:xor;
+    mask-composite:exclude;
+    opacity:0;
+    transition:0.4s;
+}
+
+.course:hover::after{
+    opacity:1;
+}
+
+/* ✨ HOVER */
+.course:hover{
+    transform:translateY(-12px) scale(1.04);
+    box-shadow:0 20px 40px rgba(0,123,255,0.2);
+}
+
+/* ICON */
+.icon{
+    width:65px;
+    height:65px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:15px;
+    background:linear-gradient(45deg,#007bff,#00c6ff);
+    animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-6px);}
+}
+
+.icon i{
+    font-size:28px;
+    color:#fff;
+}
+
+/* TEXT */
+.course h3{
+    margin:10px 0;
+    font-size:20px;
+}
+
+.course p{
+    color:#555;
+    font-size:14px;
+}
+
+.course span{
+    display:inline-block;
+    margin-top:10px;
+    color:#007bff;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.course:hover span{
+    transform:translateX(6px);
+}
+
+/* 🔥 AI CARD SPECIAL */
+.ai-card{
+    background:linear-gradient(135deg,#eaf3ff,#ffffff);
+}
+
+.ai-icon{
+    background:linear-gradient(45deg,#6a00ff,#00c3ff);
+    box-shadow:0 0 20px #6a00ff;
+}
+
+/* 🔥 FLOATING SHAPES BACKGROUND */
+body::before, body::after{
+    content:"";
+    position:fixed;
+    width:200px;
+    height:200px;
+    background:rgba(0,123,255,0.1);
+    border-radius:50%;
+    z-index:-1;
+    animation:move 8s infinite alternate;
+}
+
+body::before{
+    top:10%;
+    left:10%;
+}
+
+body::after{
+    bottom:10%;
+    right:10%;
+}
+
+@keyframes move{
+    0%{transform:translateY(0);}
+    100%{transform:translateY(40px);}
+}
+
+/* 📱 RESPONSIVE */
+@media(max-width:900px){
+    .course-box{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:500px){
+    .course-box{
+        grid-template-columns:1fr;
+    }
+
+    .course{
+        padding:18px;
+    }
+
+    .icon{
+        width:50px;
+        height:50px;
+    }
+
+    .icon i{
+        font-size:22px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="course-box">
+
+    <a href="#" class="course">
+        <div class="icon"><i class="fa-brands fa-html5"></i></div>
+        <h3>HTML</h3>
+        <p>Beginner</p>
+        <span>Explore →</span>
+    </a>
+
+    <a href="#" class="course">
+        <div class="icon"><i class="fa-brands fa-css3-alt"></i></div>
+        <h3>CSS</h3>
+        <p>Design</p>
+        <span>Explore →</span>
+    </a>
+
+    <a href="#" class="course">
+        <div class="icon"><i class="fa-brands fa-js"></i></div>
+        <h3>JavaScript</h3>
+        <p>Logic</p>
+        <span>Explore →</span>
+    </a>
+
+    <a href="#" class="course">
+        <div class="icon"><i class="fa-brands fa-react"></i></div>
+        <h3>React</h3>
+        <p>Frontend</p>
+        <span>Explore →</span>
+    </a>
+
+    <a href="#" class="course">
+        <div class="icon"><i class="fa-brands fa-node-js"></i></div>
+        <h3>Node.js</h3>
+        <p>Backend</p>
+        <span>Explore →</span>
+    </a>
+
+    <a href="#" class="course">
+        <div class="icon"><i class="fa-brands fa-git-alt"></i></div>
+        <h3>Git & GitHub</h3>
+        <p>Version</p>
+        <span>Explore →</span>
+    </a>
+
+    <a href="#" class="course">
+        <div class="icon"><i class="fa-solid fa-laptop-code"></i></div>
+        <h3>Projects</h3>
+        <p>Practice</p>
+        <span>Explore →</span>
+    </a>
+
+    <a href="#" class="course">
+        <div class="icon"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+        <h3>Deployment</h3>
+        <p>Live Website</p>
+        <span>Explore →</span>
+    </a>
+
+    <a href="#" class="course ai-card">
+        <div class="icon ai-icon"><i class="fa-solid fa-robot"></i></div>
+        <h3>AI Projects</h3>
+        <p>Machine Learning & AI</p>
+        <span>Explore →</span>
+    </a>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JavaScript Course</title>
+
+<style>
+:root{
+    --primary:#4a6cf7;
+    --primary-dark:#2f4de0;
+    --bg:#f5f7fb;
+    --text:#1f2933;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+}
+
+/* WRAPPER */
+.wrapper{
+    max-width:1430px;
+    margin:auto;
+}
+
+/* BACK */
+.back{
+    padding:20px;
+}
+
+.back a{
+    text-decoration:none;
+    color:var(--primary);
+    font-weight:600;
+    transition:0.25s;
+}
+
+.back a:hover{
+    color:var(--primary-dark);
+    transform:translateX(-3px);
+}
+
+/* HEADER */
+.header{
+    text-align:center;
+    padding:60px 20px;
+    background:linear-gradient(90deg,var(--primary),#6f8cff);
+    color:white;
+    border-radius:0 0 18px 18px;
+}
+
+.header h1{
+    font-size:2.5rem;
+}
+
+.header p{
+    margin-top:10px;
+    font-size:1rem;
+    opacity:0.9;
+}
+
+/* CONTAINER */
+.container{
+    padding:40px 20px;
+}
+
+/* GRID */
+.topics{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+    gap:22px;
+}
+
+/* CARD */
+.card{
+    background:white;
+    padding:22px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    transition:all 0.25s ease;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 12px 25px rgba(0,0,0,0.12);
+}
+
+.card h3{
+    margin-bottom:8px;
+    font-size:1.1rem;
+}
+
+.card p{
+    color:#555;
+    font-size:0.9rem;
+}
+
+/* BUTTON */
+.btn{
+    margin-top:14px;
+    display:inline-block;
+    padding:9px 16px;
+    background:var(--primary);
+    color:white;
+    border-radius:6px;
+    text-decoration:none;
+    font-size:0.9rem;
+    transition:all 0.25s ease;
+}
+
+.btn:hover{
+    background:var(--primary-dark);
+    transform:translateY(-2px);
+    box-shadow:0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    .header h1{
+        font-size:2rem;
+    }
+
+    .container{
+        padding:30px 15px;
+    }
+}
+
+@media(max-width:480px){
+    .header{
+        padding:50px 15px;
+    }
+
+    .header h1{
+        font-size:1.6rem;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="wrapper">
+
+<div class="back">
+    <a href="index.html">⬅ Back to Home</a>
+</div>
+
+<div class="header">
+    <h1>JavaScript</h1>
+    <p>Learn JavaScript from Beginner to Advanced</p>
+</div>
+
+<div class="container">
+    <div class="topics">
+
+        <div class="card">
+            <h3>Basics</h3>
+            <p>Variables, Data Types, Operators</p>
+            <a href="#" class="btn">Learn</a>
+        </div>
+
+        <div class="card">
+            <h3>Functions</h3>
+            <p>Functions, Arrow Functions, Scope</p>
+            <a href="#" class="btn">Learn</a>
+        </div>
+
+        <div class="card">
+            <h3>DOM Manipulation</h3>
+            <p>Change HTML & CSS using JavaScript</p>
+            <a href="#" class="btn">Learn</a>
+        </div>
+
+        <div class="card">
+            <h3>Events</h3>
+            <p>Click, Hover, Keyboard Events</p>
+            <a href="#" class="btn">Learn</a>
+        </div>
+
+        <div class="card">
+            <h3>Advanced JS</h3>
+            <p>Promises, Async/Await</p>
+            <a href="#" class="btn">Learn</a>
+        </div>
+
+        <div class="card">
+            <h3>Projects</h3>
+            <p>Build real-world JavaScript apps</p>
+            <a href="#" class="btn">Start</a>
+        </div>
+
+    </div>
+</div>
+
+</div>
+
+</body>
+</html>
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JavaScript Course</title>
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root{
+    --primary:#4a67d6;
+    --primary-dark:#3b55c4;
+    --bg:#f4f6fb;
+    --text:#1f2933;
+    --gradient: linear-gradient(135deg,#4a67d6,#5c7cff);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background:var(--bg);
+}
+
+/* WRAPPER */
+.wrapper{
+    max-width:1400px;
+    margin:auto;
+    padding:20px;
+}
+
+/* BACK */
+.back a{
+    text-decoration:none;
+    color:var(--primary);
+    font-weight:bold;
+    transition:0.3s;
+}
+.back a:hover{
+    color:var(--primary-dark);
+    transform:translateX(-5px);
+}
+
+/* HERO (🔥 SAME STYLE) */
+.hero{
+    background:var(--gradient);
+    color:white;
+    text-align:center;
+    padding:70px 20px;
+    border-radius:20px;
+    margin:20px 0 40px;
+    box-shadow:0 10px 30px rgba(74,103,214,0.3);
+    animation:fadeIn 1s ease;
+}
+
+.hero h1{
+    font-size:2.6rem;
+}
+
+.hero p{
+    margin-top:10px;
+    opacity:0.9;
+}
+
+/* GRID */
+.container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+/* CARD (🔥 PRO STYLE) */
+.card{
+    background:white;
+    padding:25px;
+    border-radius:16px;
+    box-shadow:0 6px 20px rgba(0,0,0,0.08);
+    transition:0.4s;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+/* HOVER */
+.card:hover{
+    transform:translateY(-10px) scale(1.03);
+    background:var(--gradient);
+    color:white;
+    box-shadow:0 15px 35px rgba(0,0,0,0.2);
+}
+
+.card h3,
+.card p{
+    transition:0.3s;
+}
+
+.card:hover h3,
+.card:hover p{
+    color:white;
+}
+
+/* ICON */
+.card i{
+    font-size:32px;
+    color:var(--primary);
+    animation:float 3s infinite ease-in-out;
+    transition:0.5s;
+}
+
+.card:hover i{
+    transform:scale(1.4) rotate(15deg);
+    color:white;
+}
+
+/* FLOAT */
+@keyframes float{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-6px);}
+}
+
+/* BUTTON */
+.btn{
+    margin-top:auto;
+    padding:10px 16px;
+    border:none;
+    border-radius:6px;
+    background:var(--primary);
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:var(--primary-dark);
+    transform:scale(1.1);
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* ANIMATION */
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(-20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    .hero h1{
+        font-size:2rem;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+<div class="back">
+    <a href="index.html">← Back to Home</a>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+    <h1>JavaScript</h1>
+    <p>Learn JavaScript from Beginner to Advanced</p>
+</div>
+
+<!-- CARDS -->
+<div class="container">
+
+    <div class="card">
+        <i class="fa-solid fa-code"></i>
+        <h3>Basics</h3>
+        <p>Variables, Data Types, Operators</p>
+        <button class="btn">Learn</button>
+    </div>
+
+    <div class="card">
+        <i class="fa-solid fa-function"></i>
+        <h3>Functions</h3>
+        <p>Functions, Arrow Functions, Scope</p>
+        <button class="btn">Learn</button>
+    </div>
+
+    <div class="card">
+        <i class="fa-solid fa-display"></i>
+        <h3>DOM Manipulation</h3>
+        <p>Change HTML & CSS using JavaScript</p>
+        <button class="btn">Learn</button>
+    </div>
+
+    <div class="card">
+        <i class="fa-solid fa-bolt"></i>
+        <h3>Events</h3>
+        <p>Click, Hover, Keyboard Events</p>
+        <button class="btn">Learn</button>
+    </div>
+
+    <div class="card">
+        <i class="fa-solid fa-layer-group"></i>
+        <h3>Advanced JS</h3>
+        <p>Promises, Async/Await</p>
+        <button class="btn">Learn</button>
+    </div>
+
+    <div class="card">
+        <i class="fa-solid fa-rocket"></i>
+        <h3>Projects</h3>
+        <p>Build real-world JavaScript apps</p>
+        <button class="btn">Start</button>
+    </div>
+
+</div>
+
+</div>
+
+</body>
+</html>

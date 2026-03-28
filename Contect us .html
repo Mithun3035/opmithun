@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Contact Support</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial;}
+
+body{
+    background: linear-gradient(135deg,#f4f6fb,#e9ecff);
+    color:#333;
+}
+
+.container{
+    max-width:600px;
+    margin:auto;
+    padding:40px 20px;
+    text-align:center;
+}
+
+h1{
+    margin-bottom:10px;
+}
+
+.subtitle{
+    color:#666;
+    margin-bottom:25px;
+}
+
+/* Card */
+.contact{
+    background:#fff;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+    text-align:left;
+    transition:0.3s;
+}
+
+.contact:hover{
+    transform:translateY(-5px);
+}
+
+/* Contact Box */
+.contact-box{
+    background:#efe9ff;
+    padding:15px;
+    border-radius:8px;
+    margin-bottom:20px;
+}
+
+.contact-box a{
+    color:#5b3df0;
+    text-decoration:none;
+}
+
+/* WhatsApp */
+.whatsapp-btn{
+    display:inline-block;
+    margin-top:10px;
+    padding:10px 15px;
+    background:#25D366;
+    color:white;
+    border-radius:6px;
+    text-decoration:none;
+}
+
+/* Form */
+form{
+    display:flex;
+    flex-direction:column;
+}
+
+label{
+    font-size:13px;
+    margin-top:8px;
+}
+
+input,textarea{
+    padding:10px;
+    margin-top:5px;
+    margin-bottom:12px;
+    border-radius:6px;
+    border:1px solid #ccc;
+}
+
+input:focus,textarea:focus{
+    border-color:#7a5cff;
+    outline:none;
+}
+
+/* Button */
+button{
+    padding:12px;
+    border:none;
+    background:#7a5cff;
+    color:white;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#5b3df0;
+}
+
+/* POPUP */
+.popup{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.5);
+    display:none;
+    justify-content:center;
+    align-items:center;
+}
+
+.popup-content{
+    background:#fff;
+    padding:30px;
+    border-radius:10px;
+    text-align:center;
+    width:320px;
+}
+
+.popup-content i{
+    font-size:45px;
+    color:#25D366;
+    margin-bottom:10px;
+}
+
+.popup-content h3{
+    color:#25D366;
+}
+
+.popup-content p{
+    margin-top:10px;
+    color:#555;
+}
+
+.popup-content button{
+    margin-top:15px;
+}
+</style>
+</head>
+
+<body>
+
+<section class="container">
+
+<h1>❓ WE ARE HERE TO HELP YOU!</h1>
+<p class="subtitle">Have questions? Contact us and we’ll respond quickly.</p>
+
+<div class="contact">
+
+<h2>📩 DIDN'T FIND YOUR QUESTION? ASK US</h2>
+
+<div class="contact-box">
+<h3>📞 Contact Details</h3>
+
+<p><strong>Email:</strong> 
+<a href="mailto:support@codewithmithun.com">support@codewithmithun.com</a>
+</p>
+
+<p><strong>Response time:</strong> 1–48 hours</p>
+<p><strong>Address:</strong> Jharkhand, India</p>
+
+<a href="https://wa.me/917295953892" class="whatsapp-btn">
+<i class="fab fa-whatsapp"></i> Chat on WhatsApp
+</a>
+</div>
+
+<p>Fill the form below and our team will help you as soon as possible.</p>
+
+<!-- FORM -->
+<form id="contactForm">
+
+<label>Your Full Name</label>
+<input type="text" placeholder="Enter your name" required>
+
+<label>Your Email Address</label>
+<input type="email" placeholder="Enter your email" required>
+
+<label>Your Problem</label>
+<textarea rows="4" placeholder="Write your issue here..." required></textarea>
+
+<button type="submit">Send Message</button>
+
+</form>
+
+</div>
+</section>
+
+<!-- POPUP -->
+<div class="popup" id="popup">
+<div class="popup-content">
+<i class="fas fa-check-circle"></i>
+<h3>Form Submitted Successfully 🎉</h3>
+<p>Thank you! Your message has been received. We will contact you soon.</p>
+<button onclick="closePopup()">OK</button>
+</div>
+</div>
+
+<script>
+const form = document.getElementById("contactForm");
+const popup = document.getElementById("popup");
+
+form.addEventListener("submit", function(e){
+    e.preventDefault();
+
+    // Show popup
+    popup.style.display = "flex";
+
+    // Reset form
+    form.reset();
+});
+
+function closePopup(){
+    popup.style.display = "none";
+}
+</script>
+
+</body>
+</html>

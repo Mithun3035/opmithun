@@ -1,0 +1,235 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Page</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+/* BODY */
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#ffffff;
+    overflow:hidden;
+}
+
+/* BACKGROUND SHAPES */
+.shape{
+    position:absolute;
+    border-radius:50%;
+    background:#007bff;
+    opacity:0.08;
+    animation:float 8s infinite ease-in-out;
+}
+
+.shape1{
+    width:250px;
+    height:250px;
+    top:10%;
+    left:10%;
+}
+
+.shape2{
+    width:350px;
+    height:350px;
+    bottom:10%;
+    right:10%;
+    animation-duration:10s;
+}
+
+@keyframes float{
+    0%,100%{ transform:translateY(0);}
+    50%{ transform:translateY(-30px);}
+}
+
+/* CONTAINER */
+.container{
+    width:90%;
+    max-width:1430px;
+    display:flex;
+    justify-content:center;
+}
+
+/* LOGIN BOX */
+.login-box{
+    width:380px;
+    padding:40px;
+    background:#fff;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,123,255,0.15);
+    text-align:center;
+    animation:fadeIn 1s ease;
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:scale(0.85);}
+    to{opacity:1; transform:scale(1);}
+}
+
+/* TITLE */
+.login-box h2{
+    margin-bottom:25px;
+    color:#007bff;
+}
+
+/* INPUT */
+.input-box{
+    position:relative;
+    margin:25px 0;
+}
+
+.input-box input{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-bottom:2px solid #007bff;
+    outline:none;
+    background:transparent;
+    font-size:16px;
+}
+
+/* LABEL */
+.input-box label{
+    position:absolute;
+    top:50%;
+    left:0;
+    transform:translateY(-50%);
+    pointer-events:none;
+    color:#007bff;
+    transition:0.3s;
+}
+
+/* FLOAT LABEL */
+.input-box input:focus + label,
+.input-box input:valid + label{
+    top:-5px;
+    font-size:12px;
+}
+
+/* BUTTON */
+button{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:25px;
+    background:#007bff;
+    color:#fff;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#0056b3;
+    transform:scale(1.05);
+}
+
+/* SUCCESS MESSAGE */
+.success-box{
+    position:fixed;
+    top:20px;
+    left:50%;
+    transform:translateX(-50%) translateY(-40px);
+    background:#007bff;
+    color:#fff;
+    padding:12px 25px;
+    border-radius:25px;
+    opacity:0;
+    transition:0.5s;
+    box-shadow:0 10px 25px rgba(0,123,255,0.3);
+}
+
+.success-box.show{
+    opacity:1;
+    transform:translateX(-50%) translateY(0);
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+    .login-box{
+        width:100%;
+        padding:25px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- BACKGROUND -->
+<div class="shape shape1"></div>
+<div class="shape shape2"></div>
+
+<!-- SUCCESS MESSAGE -->
+<div id="successMessage" class="success-box">Login Successful 🚀</div>
+
+<div class="container">
+    <div class="login-box">
+        <h2>Login</h2>
+
+        <form id="loginForm">
+            <div class="input-box">
+                <input type="text" id="username" required>
+                <label>Username</label>
+            </div>
+
+            <div class="input-box">
+                <input type="password" id="password" required>
+                <label>Password</label>
+            </div>
+
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</div>
+
+<script>
+
+document.getElementById("loginForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    let user = document.getElementById("username").value;
+    let pass = document.getElementById("password").value;
+
+    if(user && pass){
+
+        let msg = document.getElementById("successMessage");
+
+        // Show success message
+        msg.classList.add("show");
+
+        // Redirect to intro.html after 2.5 seconds
+        setTimeout(() => {
+            window.location.href = "index.html";
+        }, 2500);
+
+    } else {
+        alert("Please fill all fields");
+    }
+});
+
+</script>
+
+</body>
+</html>

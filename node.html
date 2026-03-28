@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Node.js Project Practice</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f3f4f6;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .back {
+      color: #2563eb;
+      margin-bottom: 15px;
+      display: inline-block;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .header {
+      background: linear-gradient(to right, #2563eb, #3b82f6);
+      color: white;
+      padding: 50px;
+      border-radius: 20px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .header h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .header p {
+      font-size: 18px;
+      opacity: 0.9;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .icon {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 15px;
+      background: #2563eb;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .btn:hover {
+      background: #1e40af;
+    }
+
+    .wide {
+      grid-column: span 2;
+    }
+
+    @media(max-width: 768px) {
+      .wide {
+        grid-column: span 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <a href="index.html" class="back">← Back to Home</a>
+
+    <div class="header">
+      <h1>Node.js Project Practice</h1>
+      <p>Build Scalable Backend Projects from Intermediate to Advanced</p>
+    </div>
+
+    <div class="grid">
+
+      <div class="card">
+        <div class="icon">🧑‍💻</div>
+        <h3>Beginner Projects</h3>
+        <p>CLI Tools, Basic HTTP Server</p>
+        <a href="#" class="btn">Start</a>
+      </div>
+
+      <div class="card">
+        <div class="icon">⚙️</div>
+        <h3>Backend Fundamentals</h3>
+        <p>REST APIs, Routing, Middleware</p>
+        <a href="#" class="btn">Start</a>
+      </div>
+
+      <div class="card">
+        <div class="icon">🟢</div>
+        <h3>Node.js Projects</h3>
+        <p>Auth API, File Upload System</p>
+        <a href="#" class="btn">Start</a>
+      </div>
+
+      <div class="card">
+        <div class="icon">🚀</div>
+        <h3>Advanced Node.js</h3>
+        <p>Microservices, WebSockets, Queues</p>
+        <a href="#" class="btn">Start</a>
+      </div>
+
+      <div class="card">
+        <div class="icon">🗄️</div>
+        <h3>Full Stack (Node)</h3>
+        <p>MERN Apps, GraphQL APIs</p>
+        <a href="#" class="btn">Start</a>
+      </div>
+
+      <div class="card wide">
+        <div class="icon">⭐</div>
+        <h3>Advanced Projects</h3>
+        <p>JWT Auth, Real-time Chat App, Scalable Architecture</p>
+        <a href="#" class="btn">Start</a>
+      </div>
+
+    </div>
+
+  </div>
+</body>
+</html>

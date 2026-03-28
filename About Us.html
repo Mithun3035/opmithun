@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>About Us - Code With Mithun</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f6fb;
+    color:#333;
+}
+
+/* Container */
+.container{
+    max-width:1000px;
+    margin:40px auto;
+    text-align:center;
+    padding:0 15px;
+}
+
+/* Header */
+.header{
+    margin-bottom:30px;
+}
+
+.icon{
+    font-size:45px;
+    color:#7a5cff;
+    transition:0.3s;
+}
+
+.icon:hover{
+    transform:scale(1.2) rotate(10deg);
+}
+
+h1{
+    font-size:32px;
+    margin-top:10px;
+}
+
+.subtitle{
+    color:#777;
+    font-size:14px;
+    margin-top:5px;
+}
+
+/* Card */
+.card{
+    background:#fff;
+    padding:30px;
+    border-radius:12px;
+    text-align:left;
+    box-shadow:0 6px 18px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 12px 30px rgba(0,0,0,0.15);
+}
+
+/* Sections */
+.section{
+    margin-bottom:20px;
+}
+
+.section h3{
+    color:#222;
+    margin-bottom:8px;
+    transition:0.3s;
+}
+
+.section h3:hover{
+    color:#7a5cff;
+}
+
+.section p{
+    font-size:14px;
+    color:#555;
+    line-height:1.7;
+}
+
+/* Feature Boxes */
+.features{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:15px;
+    margin-top:20px;
+}
+
+.feature-box{
+    background:#f9f9ff;
+    padding:15px;
+    border-radius:10px;
+    transition:0.3s;
+    cursor:pointer;
+}
+
+.feature-box:hover{
+    transform:translateY(-5px) scale(1.03);
+    background:#7a5cff;
+    color:#fff;
+}
+
+.feature-box:hover p{
+    color:#fff;
+}
+
+/* Developer Box */
+.dev-box{
+    margin-top:25px;
+    padding:20px;
+    background:#7a5cff;
+    color:#fff;
+    border-radius:10px;
+    transition:0.3s;
+}
+
+.dev-box:hover{
+    transform:scale(1.03);
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Responsive */
+@media(max-width:600px){
+    .card{
+        padding:20px;
+    }
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <div class="icon">💻</div>
+        <h1>ABOUT US</h1>
+        <p class="subtitle">Know more about Code With Mithun</p>
+    </div>
+
+    <div class="card">
+
+        <div class="section">
+            <h3>Who We Are</h3>
+            <p>
+                <strong>Code With Mithun</strong> is a platform created to help students and beginners 
+                learn web development in a simple and practical way. We focus on creating 
+                clean designs, useful tools, and beginner-friendly projects.
+            </p>
+        </div>
+
+        <div class="section">
+            <h3>Our Mission</h3>
+            <p>
+                Our mission is to make coding easy, understandable, and accessible for everyone. 
+                We aim to provide real-world projects and resources that help users improve their skills.
+            </p>
+        </div>
+
+        <div class="section">
+            <h3>What We Offer</h3>
+            <div class="features">
+                <div class="feature-box">
+                    <h4>🌐 Web Development</h4>
+                    <p>HTML, CSS, JavaScript projects and tutorials.</p>
+                </div>
+
+                <div class="feature-box">
+                    <h4>🎨 UI Design</h4>
+                    <p>Modern and attractive website designs.</p>
+                </div>
+
+                <div class="feature-box">
+                    <h4>⚙️ Tools</h4>
+                    <p>Useful web-based tools for daily tasks.</p>
+                </div>
+
+                <div class="feature-box">
+                    <h4>🚀 Learning</h4>
+                    <p>Beginner-friendly coding guidance.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="dev-box">
+            <h3>About the Developer</h3>
+            <p>
+                Hi, I’m <strong>Mithun</strong>, a passionate web developer. 
+                I created this platform to share my knowledge, help others learn coding, 
+                and build amazing web projects.
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

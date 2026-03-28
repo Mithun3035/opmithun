@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pricing & Plans - Code With Mithun</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f6fb;
+    color:#333;
+}
+
+/* Container */
+.container{
+    max-width:1200px;
+    margin:40px auto;
+    text-align:center;
+    padding:0 15px;
+}
+
+/* Header */
+.header{
+    margin-bottom:30px;
+}
+
+.icon{
+    font-size:45px;
+    color:#7a5cff;
+    transition:0.3s;
+}
+
+.icon:hover{
+    transform:scale(1.2) rotate(10deg);
+}
+
+h1{
+    font-size:34px;
+    margin-top:10px;
+}
+
+.subtitle{
+    color:#777;
+    font-size:15px;
+    margin-top:5px;
+}
+
+/* Pricing Grid */
+.pricing{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+    margin-top:30px;
+}
+
+/* Card */
+.card{
+    background:#fff;
+    padding:30px 20px;
+    border-radius:14px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.1);
+    transition:0.3s;
+    position:relative;
+}
+
+.card:hover{
+    transform:translateY(-12px) scale(1.04);
+    box-shadow:0 15px 35px rgba(0,0,0,0.2);
+}
+
+/* Popular Tag */
+.popular{
+    position:absolute;
+    top:-10px;
+    right:10px;
+    background:#ff7675;
+    color:#fff;
+    padding:6px 12px;
+    font-size:12px;
+    border-radius:6px;
+}
+
+/* Title */
+.plan{
+    font-size:22px;
+    margin-bottom:10px;
+    color:#222;
+}
+
+/* Price */
+.price{
+    font-size:30px;
+    color:#7a5cff;
+    margin:15px 0;
+}
+
+/* Features */
+.features{
+    list-style:none;
+    text-align:left;
+    margin:20px 0;
+}
+
+.features li{
+    margin-bottom:10px;
+    font-size:14px;
+}
+
+/* Button */
+.btn{
+    display:inline-block;
+    padding:10px 20px;
+    background:#7a5cff;
+    color:#fff;
+    border-radius:6px;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#5a3fe0;
+    transform:scale(1.08);
+}
+
+/* Highlight */
+.card.highlight{
+    border:2px solid #7a5cff;
+}
+
+/* Special Enterprise */
+.card.enterprise{
+    background:#1e1e2f;
+    color:#fff;
+}
+
+.card.enterprise .price{
+    color:#00d2d3;
+}
+
+.card.enterprise .btn{
+    background:#00d2d3;
+}
+
+.card.enterprise .btn:hover{
+    background:#00a8a8;
+}
+
+/* Responsive Tweaks */
+@media(max-width:768px){
+    h1{
+        font-size:28px;
+    }
+
+    .price{
+        font-size:26px;
+    }
+}
+
+@media(max-width:480px){
+    .container{
+        margin:20px auto;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    .plan{
+        font-size:20px;
+    }
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <div class="icon">💳</div>
+        <h1>PRICING & PLANS</h1>
+        <p class="subtitle">Choose the best plan for your journey with Code With Mithun</p>
+    </div>
+
+    <div class="pricing">
+
+        <!-- Free -->
+        <div class="card">
+            <h2 class="plan">Free Plan</h2>
+            <p class="price">₹0</p>
+            <ul class="features">
+                <li>✔ Basic tutorials</li>
+                <li>✔ Limited tools</li>
+                <li>✔ Community support</li>
+                <li>✔ Beginner projects</li>
+            </ul>
+            <a href="#" class="btn">Start Free</a>
+        </div>
+
+        <!-- Basic -->
+        <div class="card">
+            <h2 class="plan">Basic Plan</h2>
+            <p class="price">₹299/month</p>
+            <ul class="features">
+                <li>✔ All basic tutorials</li>
+                <li>✔ More tools access</li>
+                <li>✔ Practice projects</li>
+                <li>✔ Email support</li>
+            </ul>
+            <a href="#" class="btn">Choose Plan</a>
+        </div>
+
+        <!-- Pro -->
+        <div class="card highlight">
+            <div class="popular">Most Popular</div>
+            <h2 class="plan">Pro Plan</h2>
+            <p class="price">₹499/month</p>
+            <ul class="features">
+                <li>✔ All tutorials</li>
+                <li>✔ Premium tools</li>
+                <li>✔ Advanced projects</li>
+                <li>✔ Priority support</li>
+            </ul>
+            <a href="#" class="btn">Buy Now</a>
+        </div>
+
+        <!-- Premium -->
+        <div class="card">
+            <h2 class="plan">Premium Plan</h2>
+            <p class="price">₹999/month</p>
+            <ul class="features">
+                <li>✔ Everything in Pro</li>
+                <li>✔ 1-on-1 guidance</li>
+                <li>✔ Source code</li>
+                <li>✔ Lifetime updates</li>
+            </ul>
+            <a href="#" class="btn">Upgrade</a>
+        </div>
+
+        <!-- Enterprise -->
+        <div class="card enterprise">
+            <h2 class="plan">Enterprise</h2>
+            <p class="price">₹1999/month</p>
+            <ul class="features">
+                <li>✔ All Premium features</li>
+                <li>✔ Personal mentorship</li>
+                <li>✔ Project review</li>
+                <li>✔ Dedicated support</li>
+            </ul>
+            <a href="#" class="btn">Contact Us</a>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

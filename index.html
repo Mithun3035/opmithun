@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeWithMithun Navbar</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+
+</head>
+
+<body>
+    <div>
+        <nav class="navbar">
+
+            <div class="logo">CodeWithMithun</div>
+
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="">Courses</a>
+                <a href="project.html">Projects</a>
+                <a href="About Us.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="index.html"><button class="nav-btn">Get Started</button></a>
+            </div>
+
+            <div class="right-section">
+
+                <div class="menu-toggle" id="menu">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+
+                <div class="combo-btn" id="comboBtn">
+                    <i class="fas fa-user"></i>
+                    <i class="fas fa-bars" id="menuIcon"></i>
+                </div>
+
+            </div>
+
+
+
+            <div class="popup-menu" id="popupMenu">
+                <a href="login.html"><button class="btn">Login</button></a>
+                <a href="join.html"><button class="btn">Join Us</button></a>
+            </div>
+
+            <script>
+
+                const menu = document.getElementById("menu");
+                const navLinks = document.getElementById("navLinks");
+
+                menu.addEventListener("click", () => {
+                    navLinks.classList.toggle("active");
+                });
+
+                const comboBtn = document.getElementById("comboBtn");
+                const menuIcon = document.getElementById("menuIcon");
+                const popupMenu = document.getElementById("popupMenu");
+
+                let isOpen = false;
+
+                comboBtn.addEventListener("click", () => {
+                    isOpen = !isOpen;
+
+                    if (isOpen) {
+                        menuIcon.classList.replace("fa-bars", "fa-xmark");
+                        popupMenu.classList.add("active");
+                    } else {
+                        menuIcon.classList.replace("fa-xmark", "fa-bars");
+                        popupMenu.classList.remove("active");
+                    }
+                });
+
+                document.addEventListener("click", (e) => {
+                    if (!comboBtn.contains(e.target) && !popupMenu.contains(e.target)) {
+                        popupMenu.classList.remove("active");
+                        menuIcon.classList.replace("fa-xmark", "fa-bars");
+                        isOpen = false;
+                    }
+                });
+
+            </script>
+        </nav>
+    </div>
+
+
+
+
+    <div class="hero">
+        <div class="hero-content">
+
+            <h1 class="typing">CodeWithMithun</h1>
+
+            <p> CodeWithMithun is a creative and inspiring platform designed to make coding simple, fun, and powerful
+                for everyone.
+                It helps beginners and learners build strong programming skills through clear explanations and real
+                projects.
+                With engaging content, modern ideas, and practical learning, CodeWithMithun turns coding into an
+                exciting journey.
+                
+            </p>
+
+            <a href="index.html" class="hero-btn">Start 🚀</a>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <div class="wrapper">
+
+        <div class="course-box">
+
+            <a href="html.html" class="course">
+                <div class="icon"><i class="fa-brands fa-html5"></i></div>
+                <h3>HTML</h3>
+                <p>Beginner</p>
+                <span>Explore →</span>
+            </a>
+
+            <a href="css.html" class="course">
+                <div class="icon"><i class="fa-brands fa-css3-alt"></i></div>
+                <h3>CSS</h3>
+                <p>Design</p>
+                <span>Explore →</span>
+            </a>
+
+            <a href="java.html" class="course">
+                <div class="icon"><i class="fa-brands fa-js"></i></div>
+                <h3>JavaScript</h3>
+                <p>Logic</p>
+                <span>Explore →</span>
+            </a>
+
+            <a href="react.html" class="course">
+                <div class="icon"><i class="fa-brands fa-react"></i></div>
+                <h3>React</h3>
+                <p>Frontend</p>
+                <span>Explore →</span>
+            </a>
+
+            <a href="node.html" class="course">
+                <div class="icon"><i class="fa-brands fa-node-js"></i></div>
+                <h3>Node.js</h3>
+                <p>Backend</p>
+                <span>Explore →</span>
+            </a>
+
+            <a href="git.html" class="course">
+                <div class="icon"><i class="fa-brands fa-git-alt"></i></div>
+                <h3>Git & GitHub</h3>
+                <p>Version</p>
+                <span>Explore →</span>
+            </a>
+
+            <a href="project.html" class="course">
+                <div class="icon"><i class="fa-solid fa-laptop-code"></i></div>
+                <h3>Projects</h3>
+                <p>Practice</p>
+                <span>Explore →</span>
+            </a>
+
+            <a href="deployed.html" class="course">
+                <div class="icon"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+                <h3>Deployment</h3>
+                <p>Live Website</p>
+                <span>Explore →</span>
+            </a>
+
+            <a href="aiproject.html
+            " class="course ai-card">
+                <div class="icon ai-icon"><i class="fa-solid fa-robot"></i></div>
+                <h3>AI Projects</h3>
+                <p>Machine Learning & AI</p>
+                <span>Explore →</span>
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+    <div class="wrapper">
+
+        <h2 class="roadmap-title">Learning Roadmap</h2>
+
+        <div class="steps">
+
+            <a href="html.html" class="step-link">
+                <div class="step"><i class="fa-brands fa-html5"></i> HTML Basics</div>
+            </a>
+
+            <a href="css.html" class="step-link">
+                <div class="step"><i class="fa-brands fa-css3-alt"></i> CSS Styling</div>
+            </a>
+
+            <a href="responsive.html" class="step-link">
+                <div class="step"><i class="fa-solid fa-mobile-screen"></i> Responsive Design</div>
+            </a>
+
+            <a href="javascript.html" class="step-link">
+                <div class="step"><i class="fa-brands fa-js"></i> JavaScript</div>
+            </a>
+
+            <a href="dom.html" class="step-link">
+                <div class="step"><i class="fa-solid fa-code"></i> DOM Manipulation</div>
+            </a>
+
+            <a href="api.html" class="step-link">
+                <div class="step"><i class="fa-solid fa-plug"></i> API Handling</div>
+            </a>
+
+            <a href="git.html" class="step-link">
+                <div class="step"><i class="fa-brands fa-git-alt"></i> Git & GitHub</div>
+            </a>
+
+            <a href="projects.html" class="step-link">
+                <div class="step"><i class="fa-solid fa-laptop-code"></i> Mini Projects</div>
+            </a>
+
+            <a href="advanced-js.html" class="step-link">
+                <div class="step"><i class="fa-solid fa-brain"></i> Advanced JS</div>
+            </a>
+
+            <a href="react.html" class="step-link">
+                <div class="step"><i class="fa-brands fa-react"></i> React</div>
+            </a>
+
+            <a href="backend.html" class="step-link">
+                <div class="step"><i class="fa-solid fa-server"></i> Backend</div>
+            </a>
+
+            <a href="database.html" class="step-link">
+                <div class="step"><i class="fa-solid fa-database"></i> Database</div>
+            </a>
+
+            <a href="deployment.html" class="step-link">
+                <div class="step"><i class="fa-solid fa-cloud-arrow-up"></i> Deployment</div>
+            </a>
+
+            <a href="freelancing.html" class="step-link">
+                <div class="step"><i class="fa-solid fa-briefcase"></i> Freelancing</div>
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+    <div class="card">
+
+        <div class="shape1"></div>
+        <div class="shape2"></div>
+
+        <div class="card-content">
+            <h1>CodeWithMithun - Your One Stop Coding Solution</h1>
+
+            <p>
+                Welcome to CodeWithMithun, a platform designed to make learning programming simple and effective.
+                Whether you are a beginner starting your coding journey, a student building projects,
+                or a developer improving your skills, our tutorials and resources are here to help.
+
+            <a href="index.html" class="btn">Start Learning 🚀</a>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+    <div class="wrapper">
+
+        <div class="faq-wrapper">
+
+            <h2 class="faq-title">❓ Advanced FAQ Section</h2>
+
+            <!-- CONTROLS -->
+            <div class="faq-controls">
+                <input type="text" id="search" placeholder="Search questions...">
+                <button id="openBtn">Open All</button>
+                <button id="closeBtn">Close All</button>
+            </div>
+
+            <!-- FAQ -->
+            <div class="faq-card">
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <div class="q-left"><i class="fa-solid fa-circle-info"></i><span>What is this platform?</span>
+                        </div>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="faq-answer">This platform is an interactive learning space where you can ask questions
+                        and get quick, clear answers about coding, development, and related topics.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <div class="q-left"><i class="fa-solid fa-money-bill"></i><span>Is it free?</span></div>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="faq-answer">Yes, this platform is free to use with basic features, allowing you to ask
+                        questions and get helpful answers anytime.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <div class="q-left"><i class="fa-solid fa-briefcase"></i><span>Can I get a job?</span></div>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="faq-answer">Yes, you can build skills here, but getting a job depends on your learning,
+                        practice, projects, and consistency—not just this platform.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <div class="q-left"><i class="fa-solid fa-code"></i><span>Do I need coding knowledge?</span>
+                        </div>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="faq-answer">No, coding knowledge is not required to start. You can begin as a beginner
+                        and learn step by step, but learning coding will help you understand and build better projects
+                        over time.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <div class="q-left"><i class="fa-solid fa-laptop-code"></i><span>Will I build projects?</span>
+                        </div>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="faq-answer">Yes, you can build projects here by learning step by step. Practice and
+                        applying your knowledge will help you create real-world projects and improve your skills over
+                        time.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <div class="q-left"><i class="fa-solid fa-headset"></i><span>How to contact support?</span>
+                        </div>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="faq-answer">Use the contact form in the menu.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <div class="q-left"><i class="fa-solid fa-rocket"></i><span>How long does it take?</span></div>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="faq-answer">It depends on your effort and consistency. Basic skills can take a few
+                        weeks, while mastering and building strong projects may take several months to a year of regular
+                        practice.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <div class="q-left"><i class="fa-solid fa-brain"></i><span>Is it beginner friendly?</span></div>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="faq-answer">Yes, it is beginner-friendly. You can start from basics, learn step by step,
+                        and gradually build your skills with simple explanations and practice.</div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        const questions = document.querySelectorAll(".faq-question");
+        const searchInput = document.getElementById("search");
+        const openBtn = document.getElementById("openBtn");
+        const closeBtn = document.getElementById("closeBtn");
+
+        function openItem(q) {
+            q.classList.add("active");
+            q.nextElementSibling.classList.add("show");
+        }
+
+        function closeItem(q) {
+            q.classList.remove("active");
+            q.nextElementSibling.classList.remove("show");
+        }
+
+        function toggleItem(q) {
+            const isOpen = q.nextElementSibling.classList.contains("show");
+            closeAll();
+            if (!isOpen) openItem(q);
+        }
+
+        function openAll() {
+            questions.forEach(openItem);
+        }
+
+        function closeAll() {
+            questions.forEach(closeItem);
+        }
+
+        function searchFAQ() {
+            const value = searchInput.value.toLowerCase();
+            document.querySelectorAll(".faq-item").forEach(item => {
+                const text = item.innerText.toLowerCase();
+                item.style.display = text.includes(value) ? "block" : "none";
+            });
+        }
+
+        questions.forEach(q => {
+            q.addEventListener("click", () => toggleItem(q));
+        });
+
+        openBtn.addEventListener("click", openAll);
+        closeBtn.addEventListener("click", closeAll);
+        searchInput.addEventListener("keyup", searchFAQ);
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+    <footer class="footer">
+        <div class="footer-container">
+
+            <!-- LEFT -->
+            <div class="footer-col">
+                <h2>Codewith<span>mithun</span></h2>
+                <p>
+                    Digital India's trusted platform for education, teaching and information.
+                    We make online services simple and accessible.
+                </p>
+
+                <div class="badges">
+                    <span class="badge">✔ Verified</span>
+                    <span class="badge secure">🔒 Secure</span>
+                </div>
+
+
+            </div>
+
+            <!-- SERVICES -->
+            <div class="footer-col">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Pricing & Plans .html">Pricing & Plans</a></li>
+                    <li><a href="#">Government Jobs</a></li>
+                    <li><a href="All PDF Tools .html">All PDF Tools</a></li>
+                </ul>
+            </div>
+
+            <!-- LEGAL -->
+            <div class="footer-col">
+                <h3>Legal & Help</h3>
+                <ul>
+                    <li><a href="Contect us .html">Contact Us</a></li>
+                    <li><a href="Terms & Conditions.html">Terms & Conditions</a></li>
+                    <li><a href="Privacy Policy .html">Privacy Policy</a></li>
+                    <li><a href="Refund Policy .html">Refund Policy</a></li>
+                    <li><a href="Disclaimer.html">Disclaimer</a></li>
+                    <li><a href="About Us.html">About Us</a></li>
+                </ul>
+            </div>
+
+            <!-- SOCIAL -->
+            <div class="footer-col">
+                <h3>Connect With Us</h3>
+
+                <div class="social-icons">
+                    <a href="https://wa.me/917295953892"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.instagram.com/mith_un_ry"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- BOTTOM -->
+        <div class="footer-bottom">
+            <p>
+                © 2026 Codewithmithun | Made with ❤️ by Mithun & Team
+                |
+                <a href="tel:+917295953892">+91 7295953892</a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HTML Beginner</title>
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root {
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --bg: #f3f4f6;
+  --text: #1f2933;
+  --gradient: linear-gradient(135deg, #2563eb, #3b82f6);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: var(--bg);
+}
+
+/* WRAPPER */
+.wrapper {
+  max-width: 1400px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* BACK */
+.back {
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: bold;
+  transition: 0.3s;
+}
+.back:hover {
+  color: var(--primary-dark);
+  transform: translateX(-5px);
+}
+
+/* HERO (🔥 SAME STYLE) */
+.hero {
+  background: var(--gradient);
+  color: white;
+  text-align: center;
+  padding: 70px 20px;
+  border-radius: 20px;
+  margin: 20px 0 40px;
+  box-shadow: 0 10px 30px rgba(37,99,235,0.3);
+  animation: fadeIn 1s ease;
+}
+
+.hero h1 {
+  font-size: 2.6rem;
+}
+
+.hero p {
+  margin-top: 10px;
+  opacity: 0.9;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+/* CARD (🔥 PRO STYLE) */
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  transition: 0.4s;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* HOVER EFFECT */
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  background: var(--gradient);
+  color: white;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.card h3,
+.card p {
+  transition: 0.3s;
+}
+
+.card:hover h3,
+.card:hover p {
+  color: white;
+}
+
+/* ICON */
+.card i {
+  font-size: 32px;
+  color: var(--primary);
+  animation: float 3s infinite ease-in-out;
+  transition: 0.5s;
+}
+
+.card:hover i {
+  transform: scale(1.4) rotate(15deg);
+  color: white;
+}
+
+/* FLOAT */
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* BUTTON */
+.btn {
+  margin-top: auto;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  background: var(--primary);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: var(--primary-dark);
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+  <a href="index.html" class="back">← Back to Home</a>
+
+  <!-- HERO -->
+  <div class="hero">
+    <h1>HTML Beginner</h1>
+    <p>Learn HTML from Scratch to Build Your First Website</p>
+  </div>
+
+  <!-- CARDS -->
+  <div class="grid">
+
+    <div class="card">
+      <i class="fa-solid fa-circle-info"></i>
+      <h3>Introduction</h3>
+      <p>What is HTML, How it Works</p>
+      <button class="btn">Learn</button>
+    </div>
+
+    <div class="card">
+      <i class="fa-solid fa-code"></i>
+      <h3>Basic Tags</h3>
+      <p>Headings, Paragraphs, Links</p>
+      <button class="btn">Learn</button>
+    </div>
+
+    <div class="card">
+      <i class="fa-solid fa-list"></i>
+      <h3>Lists & Tables</h3>
+      <p>Ordered, Unordered Lists, Tables</p>
+      <button class="btn">Learn</button>
+    </div>
+
+    <div class="card">
+      <i class="fa-solid fa-pen-to-square"></i>
+      <h3>Forms</h3>
+      <p>Input, Button, Form Handling</p>
+      <button class="btn">Learn</button>
+    </div>
+
+    <div class="card">
+      <i class="fa-solid fa-image"></i>
+      <h3>Images & Media</h3>
+      <p>Add Images, Videos, Audio</p>
+      <button class="btn">Learn</button>
+    </div>
+
+    <div class="card">
+      <i class="fa-solid fa-layer-group"></i>
+      <h3>Semantic HTML</h3>
+      <p>Header, Footer, Section, Article</p>
+      <button class="btn">Start</button>
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>

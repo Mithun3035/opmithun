@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CodeWithMithun</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: #f0f9ff;
+        }
+
+        /* HERO CARD */
+        .hero {
+            position: relative;
+
+            /* 🔥 WIDTH INCREASED AGAIN */
+            max-width: 1380px;
+
+            margin: 40px auto;
+            background: linear-gradient(135deg, #2563eb, #38bdf8);
+            color: #fff;
+            text-align: center;
+            padding: 20px 20px;
+            border-radius: 20px;
+            overflow: hidden;
+
+            /* HEIGHT FIXED */
+            height: 200px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* ANIMATION */
+        .hero::before,
+        .hero::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.15);
+            animation: float 6s infinite ease-in-out;
+        }
+
+        .hero::before {
+            width: 100px;
+            height: 100px;
+            top: -30px;
+            left: -30px;
+        }
+
+        .hero::after {
+            width: 140px;
+            height: 140px;
+            bottom: -50px;
+            right: -50px;
+            animation-delay: 2s;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* CONTENT */
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        /* TYPING */
+        .typing {
+            border-right: 2px solid #fff;
+            white-space: nowrap;
+            overflow: hidden;
+            display: inline-block;
+            animation: typing 3s steps(20), blink 0.6s infinite;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0
+            }
+
+            to {
+                width: 100%
+            }
+        }
+
+        @keyframes blink {
+            50% {
+                border-color: transparent
+            }
+        }
+
+        /* TEXT */
+        .hero p {
+            font-size: 13px;
+            margin: 5px auto;
+            max-width: 500px;
+        }
+
+        /* BUTTON */
+        .hero-btn {
+            display: inline-block;
+            margin-top: 5px;
+            padding: 7px 16px;
+            background: #fff;
+            color: #2563eb;
+            border-radius: 20px;
+            font-size: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .hero-btn:hover {
+            background: #e0f2fe;
+            transform: translateY(-2px);
+        }
+
+        /* 📱 RESPONSIVE */
+        @media(max-width:1400px) {
+            .hero {
+                margin: 20px 15px;
+                max-width: 100%;
+            }
+        }
+
+        @media(max-width:480px) {
+            .hero {
+                height: 180px;
+                padding: 15px;
+            }
+
+            .hero h1 {
+                font-size: 18px;
+            }
+
+            .hero p {
+                font-size: 11px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="hero">
+        <div class="hero-content">
+
+            <h1 class="typing">CodeWithMithun</h1>
+
+            <p>
+                Learn web development, build projects, and become a pro developer.
+            </p>
+
+            <a href="#" class="hero-btn">Start 🚀</a>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
